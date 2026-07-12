@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propose Day Special</title>
+    <style>
+        /* This is the CSS styling part */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 { color: #d63031; }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 2px solid #ffb3b3;
+            border-radius: 8px;
+            outline: none;
+        }
+        button {
+            background-color: #d63031;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+        button:hover { background-color: #b32424; }
+        #responseMessage {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Hey There! ❤️</h1>
+        <p>Enter your name below:</p>
+        <input type="text" id="userName" placeholder="Type your name here...">
+        <br>
+        <button onclick="checkProposal()">Submit</button>
+        
+        <div id="responseMessage"></div>
+    </div>
+
+    <script>
+        function checkProposal() {
+            // 1. Grab the value from the input box
+            const name = document.getElementById("userName").value.trim();
+            const messageDiv = document.getElementById("responseMessage");
+
+            // 2. Run your conditional logic
+            if (name === "") {
+                messageDiv.innerHTML = "⚠️ Please enter a name first!";
+                messageDiv.style.color = "orange";
+            } else {
+                // You can customize this message to match exactly what your Python script printed!
+                messageDiv.innerHTML = `Happy Propose Day, ${name}! ✨<br>Will you be my coding partner forever? 💻🌹`;
+                messageDiv.style.color = "#d63031";
+            }
+        }
+    </script>
+</body>
+</html>
